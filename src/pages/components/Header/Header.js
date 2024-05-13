@@ -1,7 +1,10 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import s from "./Header.module.scss";
 
-import TopHeader from "../TopHeader";
+const TopHeader = dynamic(() => import("../TopHeader"), {
+    ssr: false,
+});
 
 export default function Header() {
     return (
