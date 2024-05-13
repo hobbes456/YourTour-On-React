@@ -3,7 +3,7 @@ import Link from "next/link";
 import s from "./TopHeader.module.scss";
 import Logo from "../Logo";
 
-import { links } from "./links";
+import { links } from "@/lib/links";
 
 export default function TopHeader({isFixed}) {
     const [isShow, setIsShow] = useState(false);
