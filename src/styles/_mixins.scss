@@ -1,0 +1,154 @@
+@mixin _1024 {
+    @media screen and (max-width: $viewport1024) {
+        @content;
+    }
+}
+
+@mixin _770 {
+    @media screen and (max-width: $viewport770) {
+        @content;
+    }
+}
+
+@mixin roboto-regular {
+    // font-family: var(--font-roboto-regular);
+    word-wrap: break-word;
+}
+
+@mixin roboto-medium {
+    // font-family: var(--font-roboto-medium);
+    word-wrap: break-word;
+}
+
+@mixin h1-font {
+    @include roboto-medium;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 109%;
+}
+
+@mixin h2-font {
+    @include roboto-medium;
+    font-size: 59px;
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: -1px;
+}
+
+@mixin h3-font {
+    @include roboto-medium;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 122%;
+}
+
+@mixin p-big-font {
+    @include roboto-regular;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 122%;
+}
+
+@mixin p-normal-font {
+    @include roboto-regular;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 142%;
+}
+
+@mixin p-small-font {
+    @include roboto-regular;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 142%;
+    letter-spacing: -0.2px;
+}
+
+@mixin mobile-h1-font {
+    @include roboto-medium;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 112%;
+    letter-spacing: 0.2px;
+}
+
+@mixin mobile-h3-font {
+    @include roboto-medium;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.4px;
+}
+
+@mixin mobile-p-big-font {
+    @include roboto-regular;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 144%;
+    letter-spacing: -0.4px;
+}
+
+@mixin mobile-p-normal-font {
+    @include roboto-regular;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 142%;
+}
+
+@mixin mobile-p-small-font {
+    @include roboto-regular;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 142%;
+}
+
+@mixin _content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    max-width: 1270px;
+    padding: 0 50px;
+
+    @include _770 {
+        padding: 0 21px;
+        gap: 50px;
+    }
+}
+
+@mixin _hover-c-bg ($h-color, $h-bg, $a-color, $a-bg, $ms) {
+    transition: 
+        color $ms ease-in-out,
+        background-color $ms ease-in-out;
+
+    &:hover {
+        color: $h-color;
+        background-color: $h-bg;
+    }
+
+    &:active {
+        color: $a-color;
+        background-color: $a-bg;
+    }
+}
+
+@mixin _link-underline ($underline-offset, $underline-width, $active-color) {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: $underline-offset;
+    text-decoration-thickness: $underline-width;
+
+    transition: 
+        color 150ms ease-in-out,
+        text-decoration-color 150ms ease-in-out;
+
+    &:hover {
+        text-decoration-color: inherit;
+    }
+        
+    &:active {
+        color: $active-color;
+    }
+}

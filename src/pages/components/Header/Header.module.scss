@@ -1,0 +1,121 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.header {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 120px;
+    width: 100%;
+    height: 831px;
+
+    @include _770 {
+        row-gap: 52px;
+        height: 488px;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: inherit;
+        height: inherit;
+
+        &_img {
+            z-index: 0;
+
+            width: 100%;
+            height: 100%;
+            
+            background-color: $lightgrey;
+
+            object-fit: cover;
+        }
+
+        &::before {
+            position: absolute;
+            
+            width: inherit;
+            height: inherit;
+            
+            background: 
+                linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.00) 40%),
+                linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    
+            content: "";
+        }
+    }
+
+    &__bottom {
+        z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+
+        @include _770 {
+            gap: 40px;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 768px;
+        
+        color: $white;
+        text-align: center;
+        
+        @include h1-font;
+        
+        @include _770 {
+            width: 100%;
+            padding: 0 20px;
+
+            @include mobile-h1-font;
+        }
+    }
+
+    &__subtitle {
+        width: 562px;
+
+        color: $white;
+        text-align: center;
+
+        @include p-normal-font;
+
+        @include _1024 {
+            width: 422px;
+        }
+
+        @include _770 {
+            width: 310px;
+            padding: 0 20px;
+
+            @include mobile-p-normal-font;
+        }
+    }
+
+    &__button {
+        padding: 5px 20px;
+
+        text-align: center;
+
+        border-radius: 10px;
+
+        background-color: $white;
+
+        @include p-small-font;
+
+        @include _770 {
+            @include mobile-p-small-font;
+        }
+
+        @include _hover-c-bg ($white, $orange200, $black, $orange100, 150ms);
+    }
+}

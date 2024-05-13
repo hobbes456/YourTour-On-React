@@ -1,0 +1,15 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.logo {
+    &__image {
+        @include _770 {
+            width: 133px;
+            height: 25px;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+    }
+}
