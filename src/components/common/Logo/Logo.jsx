@@ -1,9 +1,11 @@
-import s from "./Logo.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import svg from "@/lib/svg";
 
-export default function Logo({isBlack}) {
+import svg from "@/constants/svg";
+
+import s from "./Logo.module.scss";
+
+const Logo = ({isBlack}) => {
     const { yourTourWhite, yourTourBlack } = svg;
     const yourTour = isBlack ? yourTourBlack : yourTourWhite;
 
@@ -21,3 +23,5 @@ export default function Logo({isBlack}) {
         </div>
     )
 }
+
+export default Logo;

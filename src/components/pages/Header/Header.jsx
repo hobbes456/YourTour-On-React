@@ -1,12 +1,10 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
+
+import TopHeader from "@/components/common/TopHeader";
+
 import s from "./Header.module.scss";
 
-const TopHeader = dynamic(() => import("../TopHeader"), {
-    ssr: false,
-});
-
-export default function Header() {
+const Header = () => {
     return (
         <div className={s.header}>
             <div className={s.header__image}>
@@ -28,3 +26,5 @@ export default function Header() {
         </div>
     )
 }
+
+export default Header;
