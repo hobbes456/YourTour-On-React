@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 
 import Logo from "@/components/common/Logo";
 import { links } from "@/constants/links";
@@ -18,9 +19,10 @@ const TopHeader = ({isFixed}) => {
         
         return () => document.removeEventListener("scroll", handleScroll);
     }, [handleScroll]);
-
+    
+    
     return (
-        <div className={`${s.topHeader} ${isFixed ? s.topHeader_fixed : "" } ${isShow ? s.topHeader_show : "" }`}
+        <div className={clsx(s.topHeader, isFixed && s.topHeader_fixed, isShow && s.topHeader_show)}
         >
             <div className={s.topHeader__body}>
                 <Logo isBlack={isFixed} />
