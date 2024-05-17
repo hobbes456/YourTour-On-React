@@ -1,3 +1,5 @@
+@import "./fonts.scss";
+
 @mixin _1024 {
     @media screen and (max-width: $viewport1024) {
         @content;
@@ -10,13 +12,15 @@
     }
 }
 
-@mixin roboto-regular {
-    // font-family: var(--font-roboto-regular);
+@mixin roboto-medium {
+    font-style: normal;
+    font-family: "Roboto-Medium", sans-serif;
     word-wrap: break-word;
 }
 
-@mixin roboto-medium {
-    // font-family: var(--font-roboto-medium);
+@mixin roboto-regular {
+    font-style: normal;
+    font-family: "Roboto-Regular", sans-serif;
     word-wrap: break-word;
 }
 
