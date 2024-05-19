@@ -1,0 +1,165 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    color: $white;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    @include _770 {
+        border-radius: 20px;
+
+        &:nth-child(1) {
+            .card__image > img {
+                object-position: 20% 90%;
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: inherit;
+        max-width: inherit;
+        height: inherit;
+
+        transition: transform 300ms ease-in-out;
+        
+        @include _1024 {
+            max-width: none;
+        }
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            
+            background-color: $lightgrey;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &::before {
+            position: absolute;
+            
+            width: inherit;
+            max-width: inherit;
+            height: inherit;
+            
+            background: linear-gradient(360deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.06) 48%, rgba(0, 0, 0, 0.50) 100%);
+    
+            content: "";
+        }
+    }
+    
+    &__title {
+        margin-bottom: 16px;
+        z-index: 1;
+
+        @include h3-font;
+        
+        @include _770 {
+            margin-bottom: 13px;
+
+            @include mobile-h3-font;
+        }
+    }
+
+    &__text {
+        @include p-normal-font;
+
+        @include _770 {
+            @include mobile-p-normal-font;
+        }
+    }
+
+    &__list {
+        padding-left: 30px;
+        z-index: 1;
+
+        @include _770 {
+            padding-top: 15px;
+            padding-left: 23px;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 554px;
+
+        z-index: 1;
+    }
+
+    &__price {
+        margin-bottom: auto;
+        z-index: 1;
+
+        @include p-small-font;
+
+        @include _770 {
+            @include mobile-p-small-font;
+        }
+    }
+
+    &__button {
+        border-radius: 50px;
+
+        transition: background-color 150ms ease-in-out;
+    }
+
+    &__information {
+        margin-top: auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        padding-right: 10px;
+        z-index: 1;
+    }
+
+    &__links {
+        display: flex;
+        gap: 30px;
+        padding-top: 20px;
+
+        @include _770 {
+            display: none;
+        }
+    }
+
+    &__link {
+        @include p-normal-font;
+
+        @include _770 {
+            @include mobile-p-normal-font;
+        }
+
+        @include _link-underline (6px, 1px, $orange200);
+    }
+
+    &:hover {
+        .card__image {
+            transform: scale(1.2);
+        }
+    
+        .card__button {
+            background-color: $green400;
+    
+            &:active {
+                background-color: $orange200;
+            }
+        }
+    }
+}

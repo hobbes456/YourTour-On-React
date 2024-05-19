@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import AppLoader from "@/components/pages/AppLoader";
 import Header from "@/components/pages/Header";
+import Tours from "@/components/pages/Tours";
 
 import s from "@/styles/HomePage.module.scss";
 
@@ -28,6 +29,7 @@ const HomePage = () => {
                 <AppLoader/> :
                 <div className={s.main}>
                     <Header/>
+                    <Tours/>
                 </div>}
         </>
     );

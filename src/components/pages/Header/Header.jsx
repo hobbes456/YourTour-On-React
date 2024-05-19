@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import TopHeader from "@/components/common/TopHeader";
+import { headerImage } from "@/constants/images";
 
 import s from "./Header.module.scss";
 
@@ -10,10 +11,10 @@ const Header = () => {
             <div className={s.header__image}>
                 <Image 
                     className={s.header__image_img}
-                    src="/images/header-img.png"
+                    src={headerImage.src}
                     alt="header_image"
-                    width={2250}
-                    height={1500}
+                    width={headerImage.width}
+                    height={headerImage.height}
                 />
             </div>
             <TopHeader isFixed={false}/>

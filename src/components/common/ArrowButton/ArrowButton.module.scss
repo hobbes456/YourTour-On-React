@@ -1,0 +1,25 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.arrowButton {
+    position: relative;
+    top: 7px;
+    left: -20px;
+    z-index: 1;
+
+    color: $white;
+
+    @include p-big-font;
+
+    @include _770 {
+        @include mobile-p-big-font;
+    }
+
+    & > button {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        padding: 7px 20px;
+    }
+}

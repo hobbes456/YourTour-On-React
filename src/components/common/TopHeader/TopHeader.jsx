@@ -27,7 +27,7 @@ const TopHeader = ({isFixed}) => {
             <div className={s.topHeader__body}>
                 <Logo isBlack={isFixed} />
                 <nav className={s.topHeader__menu}>
-                    {links.map((item) => {
+                    {links.header.map((item) => {
                         return (
                             <Link
                                 key={item.id}
