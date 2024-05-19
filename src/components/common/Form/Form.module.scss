@@ -1,0 +1,332 @@
+.form {
+    display: grid;
+    grid-template-areas: 
+        "A B"
+        "C D"
+        "E F"
+        "G G"
+        "H H"
+        "I I"
+        "J J";
+    gap: 31px 30px;
+    width: 100%;
+    padding: 70px;
+
+    background-color: $white;
+    border-radius: 50px;
+
+    @include _1024 {
+        gap: 31px 20px;
+        padding: 60px;
+    }
+    
+    @include _770 {
+        grid-template-areas: "A" "B" "C" "D" "E" "F" "G" "H" "I" "J";
+        gap: 29px;
+        padding: 15px 20px;
+    
+        border-radius: 30px;    
+    }
+
+    &__item {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        @include p-normal-font;
+
+        @include _770 {
+            @include mobile-p-normal-font;
+        }
+        
+        & > input[type="date"],
+        & > select {
+            color: $grey300;
+        }
+        
+        & > textarea {
+            resize: none;
+            
+            @include _770 {
+                height: 130px;
+            }
+        }  
+    }
+    
+    &__item:nth-child(1) {
+        grid-area: A;
+    }
+    &__item:nth-child(2) {
+        grid-area: B;
+    }
+    &__item:nth-child(3) {
+        grid-area: C;
+    }
+    &__item:nth-child(4) {
+        grid-area: D;
+    }
+    &__item:nth-child(5) {
+        grid-area: E;
+    }
+    &__item:nth-child(6) {
+        grid-area: F;
+    }
+    &__item:nth-child(7) {
+        grid-area: G;
+    }
+    &__item:nth-child(8) {
+        grid-area: H;
+    }
+    &__item:nth-child(9) {
+        grid-area: I;
+    }
+    &__item:nth-child(10) {
+        grid-area: J;
+    }
+
+    &__field {
+        width: 100%;
+        padding: 20px;
+
+        background-color: $beige100;
+
+        border: 1px solid $beige200;
+        border-radius: 10px;
+
+        transition: background-color 300ms ease-in-out;
+
+        @include _770 {
+            padding: 10px;
+        }
+
+        &:hover {
+            background-color: $beige200;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 70%;
+        transform: translateY(-50%);
+        right: 22px;
+        
+        pointer-events: none;
+        
+        @include _770 {
+            right: 10px;
+            bottom: -3px;
+        }
+    }
+
+    &__text {
+        
+        @include p-normal-font;
+        
+        @include _1024 {
+            margin-top: -5px;
+            margin-bottom: 5px;
+        }
+
+        @include _770 {
+            margin-top: 5px;
+            margin-bottom: -5px;
+
+            @include mobile-p-normal-font;
+        }
+    }
+
+    &__radios {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        input[type="radio"] {
+            display: none;
+
+            &:checked + label:before {
+                background: url("../asset/svg/radiobutton-yes.svg") 0 0 no-repeat;
+
+                @include _770 {
+                    width: 20px;
+                    height: 20px;
+            
+                    background: url("../asset/svg/radiobutton-yes-s.svg") 0 0 no-repeat;
+                }
+            }
+        }
+
+        label {
+            position: relative;
+            margin-right: 0;
+        
+            display: inline-block;
+            padding-left: 37px;
+            padding-top: 5px;
+
+            
+            user-select: none;
+            
+            cursor: pointer;
+
+            @include p-normal-font;
+            
+            @include _1024 {
+                padding-left: 40px;
+            }
+            
+            @include _770 {
+                padding-left: 30px;
+                padding-top: 12px;
+
+                @include mobile-p-normal-font;
+            }
+
+            &:before {
+                content: "";
+
+	            position: absolute;
+	            left: 0;
+
+	            display: inline-block;
+	            width: 26px;
+	            height: 26px;
+
+                background: url("../asset/svg/radiobutton-no.svg") 0 0 no-repeat;
+        
+                @include _770 {
+                    width: 20px;
+                    height: 20px;
+            
+                    background: url("../asset/svg/radiobutton-no-s.svg") 0 0 no-repeat;
+                }
+            }
+        }
+    }
+
+    &__licentia {
+        display: flex;
+        gap: 18px;
+
+        @include p-small-font;
+        
+        @include _770 {
+            gap: 8px;
+
+            @include mobile-p-small-font;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+
+            &:checked + label:before {
+                background: url("../asset/svg/s-radiobutton-yes.svg") 0 0 no-repeat;
+
+                @include _770 {
+                    width: 20px;
+                    height: 20px;
+            
+                    background: url("../asset/svg/s-radiobutton-yes-s.svg") 0 0 no-repeat;
+                }
+            }
+        }
+
+        & label {
+            position: relative;
+            margin-right: 0;
+
+            display: inline-block;
+            padding-left: 26px;
+
+            user-select: none;
+
+            cursor: pointer;
+
+            @include _1024 {
+                padding-left: 22px;
+            }
+        
+            &:before {
+                content: "";
+    
+                position: absolute;
+                left: 0;
+    
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+    
+                background: url("../asset/svg/s-radiobutton-no.svg") 0 0 no-repeat;
+    
+                @include _770 {
+                    width: 20px;
+                    height: 20px;
+                
+                    background: url("../asset/svg/s-radiobutton-no-s.svg") 0 0 no-repeat;
+                }
+            }
+        }
+
+        p {
+            color: $grey300;
+
+            a {
+                color: $black;
+
+                @include _link-underline (1px, 1px, $green400);
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        width: 500px;
+
+        @include _770 {
+            gap: 10px;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        margin-top: 5px;
+
+        width: 100%;
+        padding: 15px 30px;
+
+        text-align: center;
+        
+        border-radius: 10px;
+        
+        @include p-normal-font;
+        
+        @include _770 {
+            max-width: 185px;
+            height: 100%;
+            padding: 13px 28px;
+
+            @include mobile-p-normal-font;
+        }
+
+        &[type="submit"] {
+            color: $white;
+
+            background-color: $green400;
+
+            @include _hover-c-bg ($white, $green300, $white, $green200, 300ms);
+        }
+        
+        &[type="reset"] {
+            color: $green400;
+            
+            background-color: $green100;
+            
+            @include _hover-c-bg ($green400, $grey200, $green400, $grey100, 300ms);
+        }
+    }
+}
