@@ -1,0 +1,33 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    text-align: center;
+
+    @include _770 {
+        gap: 18px;
+    }
+
+    &__title {
+        @include h2-font;
+
+        @include _770 {
+            @include mobile-h1-font;
+        }
+    }
+
+    &__subtitle {
+        width: 418px;
+
+        color: $grey300;
+
+        @include p-normal-font;
+
+        @include _770 {
+            @include mobile-p-normal-font;
+        }
+    }
+}
