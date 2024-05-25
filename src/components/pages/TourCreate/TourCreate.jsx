@@ -1,5 +1,5 @@
 import Title from "@/components/common/Title";
-import Form from "@/components/common/Form";
+import Form from "@/components/pages/Form";
 
 import s from "./TourCreate.module.scss";
 

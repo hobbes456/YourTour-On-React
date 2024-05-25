@@ -1,3 +1,6 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
 .form {
     display: grid;
     grid-template-areas: 
@@ -40,11 +43,6 @@
 
         @include _770 {
             @include mobile-p-normal-font;
-        }
-        
-        & > input[type="date"],
-        & > select {
-            color: $grey300;
         }
         
         & > textarea {
@@ -101,9 +99,13 @@
         @include _770 {
             padding: 10px;
         }
-
+        
         &:hover {
             background-color: $beige200;
+        }
+
+        &_grey {
+            color: $grey300;
         }
     }
 
@@ -135,148 +137,6 @@
             margin-bottom: -5px;
 
             @include mobile-p-normal-font;
-        }
-    }
-
-    &__radios {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-
-        input[type="radio"] {
-            display: none;
-
-            &:checked + label:before {
-                background: url("../asset/svg/radiobutton-yes.svg") 0 0 no-repeat;
-
-                @include _770 {
-                    width: 20px;
-                    height: 20px;
-            
-                    background: url("../asset/svg/radiobutton-yes-s.svg") 0 0 no-repeat;
-                }
-            }
-        }
-
-        label {
-            position: relative;
-            margin-right: 0;
-        
-            display: inline-block;
-            padding-left: 37px;
-            padding-top: 5px;
-
-            
-            user-select: none;
-            
-            cursor: pointer;
-
-            @include p-normal-font;
-            
-            @include _1024 {
-                padding-left: 40px;
-            }
-            
-            @include _770 {
-                padding-left: 30px;
-                padding-top: 12px;
-
-                @include mobile-p-normal-font;
-            }
-
-            &:before {
-                content: "";
-
-	            position: absolute;
-	            left: 0;
-
-	            display: inline-block;
-	            width: 26px;
-	            height: 26px;
-
-                background: url("../asset/svg/radiobutton-no.svg") 0 0 no-repeat;
-        
-                @include _770 {
-                    width: 20px;
-                    height: 20px;
-            
-                    background: url("../asset/svg/radiobutton-no-s.svg") 0 0 no-repeat;
-                }
-            }
-        }
-    }
-
-    &__licentia {
-        display: flex;
-        gap: 18px;
-
-        @include p-small-font;
-        
-        @include _770 {
-            gap: 8px;
-
-            @include mobile-p-small-font;
-        }
-
-        input[type="checkbox"] {
-            display: none;
-
-            &:checked + label:before {
-                background: url("../asset/svg/s-radiobutton-yes.svg") 0 0 no-repeat;
-
-                @include _770 {
-                    width: 20px;
-                    height: 20px;
-            
-                    background: url("../asset/svg/s-radiobutton-yes-s.svg") 0 0 no-repeat;
-                }
-            }
-        }
-
-        & label {
-            position: relative;
-            margin-right: 0;
-
-            display: inline-block;
-            padding-left: 26px;
-
-            user-select: none;
-
-            cursor: pointer;
-
-            @include _1024 {
-                padding-left: 22px;
-            }
-        
-            &:before {
-                content: "";
-    
-                position: absolute;
-                left: 0;
-    
-                display: inline-block;
-                width: 26px;
-                height: 26px;
-    
-                background: url("../asset/svg/s-radiobutton-no.svg") 0 0 no-repeat;
-    
-                @include _770 {
-                    width: 20px;
-                    height: 20px;
-                
-                    background: url("../asset/svg/s-radiobutton-no-s.svg") 0 0 no-repeat;
-                }
-            }
-        }
-
-        p {
-            color: $grey300;
-
-            a {
-                color: $black;
-
-                @include _link-underline (1px, 1px, $green400);
-            }
         }
     }
 

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 
-import AppLoader from "@/components/pages/AppLoader";
+import AppLoader from "@/components/common/AppLoader";
 import Header from "@/components/pages/Header";
 import Tours from "@/components/pages/Tours";
+import TourCreate from "@/components/pages/TourCreate";
 
 import s from "@/styles/HomePage.module.scss";
 
@@ -30,6 +31,7 @@ const HomePage = () => {
                 <div className={s.main}>
                     <Header/>
                     <Tours/>
+                    <TourCreate/>
                 </div>}
         </>
     );
