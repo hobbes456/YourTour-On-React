@@ -1,6 +1,6 @@
 import { cardTourImage1, cardTourImage2, cardTourImage3, cardTourImage4, cardTourImage5, cardTourImage6 } from "@/constants/images";
 
-export const data = [
+export const cardData = [
     {
         id: 1,
         isBig: false,

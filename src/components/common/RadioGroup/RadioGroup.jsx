@@ -19,7 +19,7 @@ const RadioGroup = ({width, value, onChange}) => {
                     matchingSvg = value === item.value ? radiobuttonYes : radiobuttonNo;
                 }
 
-                return(<div key={item.id}>
+                return (<div key={item.id}>
                     <input
                         name="radio"
                         type="radio"

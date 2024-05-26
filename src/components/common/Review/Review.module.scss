@@ -1,0 +1,91 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.review {
+    margin-top: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    width: 100%;
+    padding: 30px 40px;
+
+    background-color: $beige200;
+    border-radius: 50px;
+
+    @include _770 {
+        margin-top: 0;
+
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+
+    &__text {
+        @include p-big-font;
+        
+        @include _770 {
+            @include mobile-p-big-font;
+        }
+    }
+
+    &__person {
+        margin-top: 70px;
+        margin-bottom: 10px;
+
+        display: grid;
+        grid-template-areas: "A C" "B C";
+    
+        @include _770 {
+            margin-top: 58px;
+            margin-bottom: -5px;
+        }
+    }
+    
+    &__name {
+        grid-area: A;
+        width: 100%;
+
+        @include h3-font;
+
+        @include _770 {
+            @include mobile-h3-font;
+        }
+    }
+    
+    &__tour {
+        margin-top: 8px;
+
+        grid-area: B;
+        width: 100%;
+
+        color: $grey300;
+
+        @include p-small-font;
+
+        @include _770 {
+            @include mobile-p-small-font;
+        }
+    }
+
+    &__avatar {
+        grid-area: C;
+
+        margin-left: auto;
+    
+        @include _770 {
+            margin-top: -17px;
+        }
+
+        img {
+            width: 75px;
+            height: 75px;
+    
+            border-radius: 100px;
+    
+            object-fit: cover;
+            object-position: 50% 12%;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import clsx from "clsx";
 
 import Card from "@/components/common/Card";
-import { data } from "@/stubs/data";
+import { cardData } from "@/stubs/cardData";
 import { links } from "@/constants/links";
 
 import s from "./Tours.module.scss";
@@ -33,7 +33,7 @@ const Tours = () => {
                 })}
             </nav>
             <div className={s.tours__cards}>
-                {data.map((card) => {
+                {cardData.map((card) => {
                     return(
                         <Card key={card.id} data={card} parentClass={s.tours__card}/>
                     )
