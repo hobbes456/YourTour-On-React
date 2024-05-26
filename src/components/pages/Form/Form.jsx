@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { InputMask } from "@react-input/mask";
 
 import RadioGroup from "@/components/common/RadioGroup";
+import Licentia from "@/components/common/Licentia";
 import { templateFormDate } from "@/constants/templateFormDate";
 import { options } from "@/constants/options";
 import svg from "@/constants/svg";
@@ -25,7 +26,7 @@ const Form = () => {
         setArrIdChange(
             arrIdChange.includes(id) ? [...arrIdChange] : [...arrIdChange, id]
         )
-    }
+    };
 
     const handlerRadioChange = (value) => {        
         setFormDate(
@@ -33,22 +34,28 @@ const Form = () => {
         );
     }
 
+    const handlerCheckboxChange = (value) => {        
+        setFormDate(
+            prev => ({...prev, hasLicentia: !(value === "false" ? false : true)})
+        );
+    };
+
     const handleResize = (event) => {
         setWidth(prev => prev = event.target.innerWidth);
-    }
+    };
 
     const handlerSubmit = (event) => {
         event.preventDefault();
 
         console.log(formDate);
-    }
+    };
 
     const handlerReset = (event) => {
         event.preventDefault();
         
         setFormDate(structuredClone(templateFormDate));
         setArrIdChange([]);
-    }
+    };
 
     useEffect(() => {
         window.addEventListener("resize", handleResize);
@@ -172,6 +179,12 @@ const Form = () => {
                     width={width}
                     value={formDate.isAdult}
                     onChange={handlerRadioChange}/>
+            </div>
+            <div className={s.form__item}>
+                <Licentia
+                    width={width}
+                    value={formDate.hasLicentia}
+                    onChange={handlerCheckboxChange}/>
             </div>
             <div className={s.form__item}>
                 <div className={s.form__buttons}>

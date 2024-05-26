@@ -1,0 +1,33 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.licentia {
+    display: flex;
+    gap: 18px;
+
+    @include p-small-font;
+        
+    @include _770 {
+        gap: 8px;
+
+        @include mobile-p-small-font;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    &__checkbox {
+        cursor: pointer;
+    }
+
+    &__text {
+        color: $grey300;
+    }
+
+    &__link {
+        color: $black;
+
+        @include _link-underline (1px, 1px, $green400);
+    }
+}
