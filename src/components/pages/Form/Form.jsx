@@ -30,13 +30,13 @@ const Form = () => {
 
     const handlerRadioChange = (value) => {        
         setFormDate(
-            prev => ({...prev, isAdult: value === "false" ? false : true})
+            prev => ({...prev, isAdult: JSON.parse(value)})
         );
     }
 
     const handlerCheckboxChange = (value) => {        
         setFormDate(
-            prev => ({...prev, hasLicentia: !(value === "false" ? false : true)})
+            prev => ({...prev, hasLicentia: !JSON.parse(value)})
         );
     };
 
