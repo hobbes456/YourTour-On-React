@@ -7,7 +7,7 @@ export const links = {
         },
         {
             id: 2,
-            href: "#tour-create",
+            href: "#tourCreate",
             text: "Создать тур"  
         },
         {

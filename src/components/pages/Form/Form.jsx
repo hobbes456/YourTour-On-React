@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { InputMask } from "@react-input/mask";
 
+import RadioGroup from "@/components/common/RadioGroup";
 import { templateFormDate } from "@/constants/templateFormDate";
 import { options } from "@/constants/options";
 import svg from "@/constants/svg";
@@ -12,6 +13,7 @@ import s from "./Form.module.scss";
 const Form = () => {
     const [formDate, setFormDate] = useState(structuredClone(templateFormDate));
     const [arrIdChange, setArrIdChange] = useState([]);
+    const [width, setWidth] = useState(window.innerWidth);
 
     const handlerItemChange = (event) => {
         const {id, value} = event.target;
@@ -25,11 +27,20 @@ const Form = () => {
         )
     }
 
+    const handlerRadioChange = (value) => {        
+        setFormDate(
+            prev => ({...prev, isAdult: value === "false" ? false : true})
+        );
+    }
+
+    const handleResize = (event) => {
+        setWidth(prev => prev = event.target.innerWidth);
+    }
+
     const handlerSubmit = (event) => {
         event.preventDefault();
 
         console.log(formDate);
-        console.log(arrIdChange);
     }
 
     const handlerReset = (event) => {
@@ -39,11 +50,18 @@ const Form = () => {
         setArrIdChange([]);
     }
 
+    useEffect(() => {
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, [handleResize]);
+
     const {iconDropdown} = svg; 
 
     return (
         <form 
-            className={s.form} 
+            className={s.form}
+            id="tourCreate" 
             action="#" 
             method="post">
             <div className={s.form__item}>
@@ -150,6 +168,10 @@ const Form = () => {
             </div>
             <div className={s.form__item}>
                 <p className={s.form__text}>Вам есть 18 лет?</p>
+                <RadioGroup
+                    width={width}
+                    value={formDate.isAdult}
+                    onChange={handlerRadioChange}/>
             </div>
             <div className={s.form__item}>
                 <div className={s.form__buttons}>

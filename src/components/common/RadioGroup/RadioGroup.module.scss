@@ -1,0 +1,27 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.radioGroup {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    &__radiobutton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        cursor: pointer;
+
+        @include p-normal-font;
+            
+        @include _770 {
+            @include mobile-p-normal-font;
+        }
+    }
+}
