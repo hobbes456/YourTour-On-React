@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import TopHeader from "@/components/pages/TopHeader";
-import { headerImage } from "@/constants/images";
+import headerImage from "/public/images/header-img.png";
 
 import s from "./Header.module.scss";
 

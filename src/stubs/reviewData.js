@@ -1,4 +1,5 @@
-import { reviewPhoto1, reviewPhoto2 } from "@/constants/images";
+import reviewPhoto1 from "/public/images/avatars/reviewPhoto1.jpg";
+import reviewPhoto2 from "/public/images/avatars/reviewPhoto2.jpg";
 
 export const reviewData = [
     {

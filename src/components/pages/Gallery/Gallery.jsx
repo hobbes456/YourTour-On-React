@@ -11,12 +11,12 @@ const Gallery = () => {
         <div className={s.gallery__screens}>
             {galleryScreens.map((screen) => {
                 return (
-                    <div className={s.gallery__image} key={screen.width}>
+                    <div className={s.gallery__image} key={screen.id}>
                         <Image
-                            src={screen.src}
-                            alt={screen.src}
-                            width={screen.width}
-                            height={screen.height}/>
+                            src={screen.img.src}
+                            alt={screen.img.src}
+                            width={screen.img.width}
+                            height={screen.img.height}/>
                     </div>
                 )
             })}
