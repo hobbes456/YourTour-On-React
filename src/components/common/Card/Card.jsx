@@ -7,8 +7,6 @@ import ArrowButton from "../ArrowButton";
 import s from "./Card.module.scss";
 
 const Card = ({data, parentClass}) => {
-    console.log(data.isBig ? data.links : "");
-
     if (data.isBig) {
         return (<div className={clsx(parentClass, s.card)}>
             <div className={s.card__image}>
@@ -32,12 +30,12 @@ const Card = ({data, parentClass}) => {
             <div className={s.card__information}>
                 <ArrowButton buttonClass={s.card__button}/>
                 <div className={s.card__links}>
-                    {data.links.map((link) => {
+                    {data.links ? data.links.map((link) => {
                         return (<Link 
                             className={s.card__link}
                             href={"#" + link.link}
                             key={link.id}>{link.link}</Link>)
-                    })}
+                    }) : <></>}
                 </div>
             </div>
         </div>);
