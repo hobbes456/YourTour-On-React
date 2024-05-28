@@ -7,6 +7,7 @@ import Tours from "@/components/pages/Tours";
 import TourCreate from "@/components/pages/TourCreate";
 import Reviews from "@/components/pages/Reviews";
 import Gallery from "@/components/pages/Gallery";
+import Stories from "@/components/pages/Stories";
 
 import s from "@/styles/HomePage.module.scss";
 
@@ -36,6 +37,7 @@ const HomePage = () => {
                     <TourCreate/>
                     <Reviews/>
                     <Gallery />
+                    <Stories/>
                 </div>}
         </>
     );

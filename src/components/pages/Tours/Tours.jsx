@@ -33,7 +33,7 @@ const Tours = () => {
                 })}
             </nav>
             <div className={s.tours__cards}>
-                {cardData.map((card) => {
+                {cardData.filter((card) => !card.isBig).map((card) => {
                     return(
                         <Card key={card.id} data={card} parentClass={s.tours__card}/>
                     )

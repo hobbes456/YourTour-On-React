@@ -1,0 +1,41 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.stories {
+    @include _content;
+
+    @include _770 {
+        > div > h2 {
+            width: 320px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        width: 100%;
+
+        @include _770 {
+            gap: 20px;
+        }
+    }
+
+    &__card {
+        justify-content: column;
+        align-items: flex-start;
+        gap: 22px;
+        width: 100%;
+        max-width: 1170px;
+        height: 567px;
+        padding: 60px;
+
+        @include _770 {
+            gap: 8px;
+            height: 455px;
+            padding: 30px;
+        }
+    }
+}
