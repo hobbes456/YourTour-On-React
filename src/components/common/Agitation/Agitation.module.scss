@@ -1,0 +1,72 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_mixins.scss";
+
+.agitation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    
+    @include _770 {
+        margin-top: 5px;
+
+        flex-direction: column;
+    }
+
+    &__image {
+        width: 370px;
+        height: 370px;
+
+        border-radius: 50px;
+
+        @include _770 {
+            width: 130px;
+            height: 130px;
+
+            border-radius: 20px;
+        }
+    }
+
+    &__content {
+        margin-bottom: 5px;
+        margin-right: 2px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        @include _770 {
+            align-items: center;
+        }
+    }
+
+    &__title {
+        @include h3-font;
+
+        @include _770 {
+            text-align: center;
+
+            @include mobile-h3-font;
+        }
+    }
+
+    &__text {
+        color: $grey300;
+
+        @include p-normal-font;
+
+        @include _770 {
+            text-align: center;
+
+            @include mobile-p-normal-font;
+        }
+
+    }
+
+    &__link {
+        color: $black;
+
+        @include _link-underline (1px, 1px, $green400);
+    }
+}

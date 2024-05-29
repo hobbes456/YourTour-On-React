@@ -8,6 +8,7 @@ import TourCreate from "@/components/pages/TourCreate";
 import Reviews from "@/components/pages/Reviews";
 import Gallery from "@/components/pages/Gallery";
 import Stories from "@/components/pages/Stories";
+import Agitation from "@/components/common/Agitation";
 
 import s from "@/styles/HomePage.module.scss";
 
@@ -38,6 +39,7 @@ const HomePage = () => {
                     <Reviews/>
                     <Gallery />
                     <Stories/>
+                    <Agitation/>
                 </div>}
         </>
     );
