@@ -17,7 +17,9 @@ const Agitation = () => {
             <h3 className={s.agitation__title}>Пора в путешествие вместе с нами!</h3>
             <p className={s.agitation__text}>
                 Напиши на почту и узнай подробности на
-                <Link href="mailto:yourtour@gmail.com"> yourtour@gmail.com</Link>
+                <label> </label>
+                <Link className={s.agitation__link}
+                href="mailto:yourtour@gmail.com">yourtour@gmail.com</Link>
             </p>
         </div>
     </div>)

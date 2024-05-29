@@ -9,6 +9,7 @@ import Reviews from "@/components/pages/Reviews";
 import Gallery from "@/components/pages/Gallery";
 import Stories from "@/components/pages/Stories";
 import Agitation from "@/components/common/Agitation";
+import Footer from "@/components/common/Footer";
 
 import s from "@/styles/HomePage.module.scss";
 
@@ -40,6 +41,7 @@ const HomePage = () => {
                     <Gallery />
                     <Stories/>
                     <Agitation/>
+                    <Footer/>
                 </div>}
         </>
     );
