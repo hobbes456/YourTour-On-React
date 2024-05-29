@@ -1,12 +1,13 @@
 import Title from "@/components/common/Title";
 import Form from "@/components/pages/Form";
+import { titleContent } from "@/constants/titleContent";
 
 import s from "./TourCreate.module.scss";
 
 const TourCreate = () => {
     return (
         <div className={s.tourCreate}>
-            <Title />
+            <Title text={titleContent[0]}/>
             <Form />
         </div>
     )
