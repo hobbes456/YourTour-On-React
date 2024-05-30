@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { reviewData } from "@/stubs/reviewData";
+import { reviewData } from "@/stubs/reviewData.jsx";
 
 import s from "./Review.module.scss";
 

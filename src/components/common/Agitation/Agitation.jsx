@@ -14,7 +14,7 @@ const Agitation = () => {
             width={footerPhoto.width}
             height={footerPhoto.height}/>
         <div className={s.agitation__content}>
-            <h3 className={s.agitation__title}>Пора в путешествие вместе с нами!</h3>
+            <h3 className={s.agitation__title}>Пора в путешествие <br/> вместе с нами!</h3>
             <p className={s.agitation__text}>
                 Напиши на почту и узнай подробности на
                 <label> </label>

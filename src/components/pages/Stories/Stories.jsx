@@ -1,6 +1,6 @@
 import Title from "@/components/common/Title";
 import Card from "@/components/common/Card";
-import { titleContent } from "@/constants/titleContent";
+import { titleContent } from "@/constants/titleContent.jsx";
 import { cardData } from "@/stubs/cardData";
 
 import s from "./Stories.module.scss";

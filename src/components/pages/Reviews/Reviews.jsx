@@ -1,6 +1,6 @@
 import Title from "@/components/common/Title";
 import Review from "@/components/common/Review";
-import { titleContent } from "@/constants/titleContent";
+import { titleContent } from "@/constants/titleContent.jsx";
 
 import s from "./Reviews.module.scss";
 

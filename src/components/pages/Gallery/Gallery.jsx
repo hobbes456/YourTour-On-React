@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import Title from "@/components/common/Title";
-import { titleContent } from "@/constants/titleContent";
+import { titleContent } from "@/constants/titleContent.jsx";
 import { galleryScreens } from "@/stubs/galleryScreens";
 
 import s from "./Gallery.module.scss";

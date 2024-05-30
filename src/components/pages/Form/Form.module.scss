@@ -11,7 +11,7 @@
         "H H"
         "I I"
         "J J";
-    gap: 31px 30px;
+    gap: 30px;
     width: 100%;
     padding: 70px;
 
@@ -19,7 +19,7 @@
     border-radius: 50px;
 
     @include _1024 {
-        gap: 31px 20px;
+        gap: 30px 20px;
         padding: 60px;
     }
     
@@ -133,8 +133,8 @@
         }
 
         @include _770 {
-            margin-top: 5px;
-            margin-bottom: -5px;
+            margin-top: 6px;
+            margin-bottom: -4px;
 
             @include mobile-p-normal-font;
         }
@@ -148,14 +148,14 @@
         width: 500px;
 
         @include _770 {
+            margin-top: -2px;
+
             gap: 10px;
             width: 100%;
         }
     }
 
     &__button {
-        margin-top: 5px;
-
         width: 100%;
         padding: 15px 30px;
 
@@ -166,6 +166,8 @@
         @include p-normal-font;
         
         @include _770 {
+            margin-top: 5px;
+
             max-width: 185px;
             height: 100%;
             padding: 13px 28px;

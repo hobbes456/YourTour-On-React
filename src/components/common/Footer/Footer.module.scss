@@ -13,9 +13,13 @@
     background-color: $beige200;
 
     @include p-normal-font;
+
+    @include _1024 {
+        margin-top: 3px;
+    }
         
     @include _770 {
-        margin-top: 0;
+        margin-top: 22px;
             
         padding: 21px;     
 
